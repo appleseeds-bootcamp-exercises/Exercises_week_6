@@ -1,0 +1,17 @@
+{
+  "name": "jstesting",
+  "version": "1.0.0",
+  "description": "Trying JS Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "author": "Sapur",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-arrays": "^2.0.0",
+    "deep-equal": "^1.0.1",
+    "mocha": "^6.1.4"
+  }
+}
