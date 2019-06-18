@@ -12,28 +12,26 @@ class Programmer extends Student {
     this.vCS = vCS;
   }
   isProgramming(language) {
-    for (let index = 0; index < this.languages.length; index++) {
-      if (this.languages[index] === language) return true;
-    }
-    return false;
+    return this.languages.indexOf(language) !== -1;
   }
 }
 function findOurProgrammer(students, language) {
   for (let index = 0; index < students.length; index++) {
-    if (students[index] instanceof Programmer) {
-      if (students[index].isProgramming(language)) {
-        return students[index];
-      }
+    if (
+      students[index] instanceof Programmer &&
+      students[index].isProgramming(language)
+    ) {
+      return students[index];
     }
   }
   return null;
 }
 
-var students = [];
-students.push(new Student("sap", ["english", "math"]));
-students.push(new Student("bap", ["english", "math"]));
-students.push(new Programmer("dap", ["math"], "ios", ["ruby", "js"], 1.1));
-students.push(
+var students = [
+  new Student("sap", ["english", "math"]),
+  new Student("bap", ["english", "math"]),
+  new Programmer("dap", ["math"], "ios", ["ruby", "js"], 1.1),
   new Programmer("cap", ["english"], "windows", ["ruby", "java"], 1.6)
-);
+];
+
 console.log(findOurProgrammer(students, "js"));
